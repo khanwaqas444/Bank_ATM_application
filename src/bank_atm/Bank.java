@@ -5,12 +5,17 @@ public class Bank {
 	String loc;
 	String ifsc_code;
 	Account a;
-	public Bank(String name, String loc, String ifsc_code) {
+	public Bank(String name, String loc, String ifsc_code, String bname) {
 		super();
 		this.bname = bname;
 		this.loc = loc;
 		this.ifsc_code = ifsc_code;
-		
+	}
+	public void bankDetails() {
+		System.out.println("bname :"+bname);
+		System.out.println("loc :"+loc);
+		System.out.println("ifsc_code :"+ifsc_code);
+
 		
 		if(a!=null) {
 			System.out.println("name :"+a.account_holder_name);

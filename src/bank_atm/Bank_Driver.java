@@ -11,7 +11,7 @@ public class Bank_Driver {
 		String loc=s.next();
 		System.out.println("Enter back ifsc_code");
 		String ifcs=s.next();
-		Bank b = new Bank(bname,loc,ifcs);
+		Bank b = new Bank(bname,loc,ifcs, bname);
 		
 		boolean option = true;
 		while(option)
@@ -40,7 +40,47 @@ public class Bank_Driver {
                 b.createAccount(new Account(name, dob, pin, money, ano));
 				System.out.println("======================================");
             }
-			
+			break;
+			case 2:{
+				b.bankDetails();
+				System.out.println("======================================");
+			}
+			break;
+			case 3:{
+				System.out.println("enter account number to deposite money");
+				long anol=s.nextLong();
+				System.out.println("enter how much money you want to deposite");
+				double money1=s.nextDouble();
+				b.Deposite(anol, money1);
+				System.out.println("======================================");
+			}
+			break;
+			case 4:{
+				System.out.println("enter account number to withdraw money");
+				long ano1=s.nextLong();
+				System.out.println("enter how much money you want to withdraw");
+				double money1=s.nextDouble();
+				b.Withdraw(ano1, money1);
+				System.out.println("======================================");
+				
+			}
+			break;
+			case 5:{
+				b.DeleteAccount();
+				
+			}
+			break;
+			case 6:{
+				System.out.println("thankyou for using"+ bname);
+				System.out.println("having a good day)!!!");
+				option=false;
+				
+			}
+			break;
+			default:{
+				System.out.println("enter your valid choice ");
+				break;
+			}
 			}
 		}
 	}
